@@ -9,6 +9,7 @@ function App() {
     auth.onAuthStateChanged(user => {
       if(user){
       setPresentUser({
+        user,
         uid:user.uid,
         email:user.email
       })

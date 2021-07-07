@@ -1,5 +1,8 @@
 *{
-    background:url(./bg.jpg) center fixed no-repeat;
+    background:url(./bg.jpg) center fixed  no-repeat;
+}
+.Form.Group{
+    border: blue solid 2px;
 }
 .primary{
     color:#fff;

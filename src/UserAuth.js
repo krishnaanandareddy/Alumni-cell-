@@ -26,16 +26,6 @@ const UserAuth = () => {
         e.preventDefault();
         auth.signInWithEmailAndPassword(email, password).then(user => console.log(user)).catch(err => console.log(err))
     }
-    // const signInWithGoogle = async () => {
-    //     try {
-    //         await auth.signInWithPopup(new firebase.auth().GoogleAuthProvider());
-    //     }
-    //     catch (err) {
-    //         console.log(err);
-    //     }
-
-
-    // }
     var provider = new firebase.auth.GoogleAuthProvider();
     firebase.auth()
         .signInWithPopup(provider)
@@ -61,37 +51,36 @@ const UserAuth = () => {
 
     return (
         <>
-            <Container className="mt-5">
-                <Row>
-                    <Col lg={4} md={3} sm={12}></Col>
-                    <Col lg={4} md={6} sm={12} className="text-center mt-5 ">
-                        <img src={logo} alt="icon" className="icon" />
-                        <Form>
-                            <Form.Group controlId="formBasicEmail">
-                                <Form.Control type="email" name="email" placeholder="Enter email" value={email} onChange={changeHandler} /><br />
-                            </Form.Group>
+            <Container className="d-flex align-items-center justify-content-center con" >
+                <Container className="mt-5">
+                    <Row>
+                        <Col className="text-center"> 
+                            <img src={logo} alt="icon" className="icon" />
+                            <Form>
+                                <Form.Group controlId="formBasicEmail">
+                                    <Form.Control type="email" name="email" placeholder="Enter email" value={email} onChange={changeHandler} /><br />
+                                </Form.Group>
 
-                            <Form.Group controlId="formBasicPassword">
-                                <Form.Control type="password" name="password" placeholder="Password" value={password} onChange={changeHandler} /><br />
-                            </Form.Group>
-                            <Form.Group>
-                                <Button onClick={Login} className="primary btn-block btn1" type="submit">
-                                    Login
-                                </Button><br /><br />
-                                <p>
-                                    Or
-                                </p>
-                                <Button onClick={provider} className="primary btn-block btn1" type="submit">
-                                    Signin with google
-                                </Button><br /><br />
-                            </Form.Group>
-                            <p>Dont have an account? <a onClick={Signup} href="#">Signup here</a></p>
+                                <Form.Group controlId="formBasicPassword">
+                                    <Form.Control type="password" name="password" placeholder="Password" value={password} onChange={changeHandler} /><br />
+                                </Form.Group>
+                                <Form.Group>
+                                    <Button onClick={Login} className="primary btn-block btn1" type="submit">
+                                        Login
+                                    </Button><br /><br />
+                                    <p>
+                                        Or
+                                    </p>
+                                    <Button onClick={provider} className="primary btn-block btn1" type="submit">
+                                        Signin with google
+                                    </Button><br /><br />
+                                </Form.Group>
+                                <p>Dont have an account? <a onClick={Signup} href="#">Signup here</a></p>
 
-                        </Form>
-                    </Col>
-                    <Col lg={4} md={3} sm={12}></Col>
-
-                </Row>
+                            </Form>
+                        </Col>
+                    </Row>
+                </Container>
             </Container>
         </>
     )

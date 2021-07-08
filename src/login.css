@@ -1,6 +1,10 @@
 *{
     background:url(./bg.jpg) center fixed  no-repeat;
 }
+.con{
+    min-height: 100vh;
+    max-width: 500px;
+}
 .Form.Group{
     border: blue solid 2px;
 }

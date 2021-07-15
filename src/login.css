@@ -1,21 +1,21 @@
-*{
-    background:url(./bg.jpg) center fixed  no-repeat;
-}
+/* *{
+    background:url() center fixed  no-repeat;
+} */
 .con{
     min-height: 100vh;
     max-width: 500px;
 }
-.Form.Group{
+/* .Form-Group{
     border: blue solid 2px;
-}
+} */
 .primary{
     color:#fff;
     background: #000;
 
 }
-.inputbox{
+/* .inputbox{
     margin:2px blue;
-}
+} */
 .icon{
     width: 90px;
     height: 90px;

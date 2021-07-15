@@ -5,7 +5,12 @@ import logo from './logo.png';
 import './login.css';
 import { auth } from './firebase';
 import firebase from 'firebase';
+// import { StyledFirebaseAuth } from 'react-firebaseui';
+// import { Link } from 'react-router-dom';
+// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+// import SignupPage from './SignupPage';
 // import db from './firebase';
+// import NavBar from './Navbar';
 
 
 const UserAuth = () => {
@@ -49,13 +54,28 @@ const UserAuth = () => {
             // ...
         });
 
+
+
+
+
+
+
     return (
         <>
-            <Container className="d-flex align-items-center justify-content-center con" >
+
+            {/* <BrowserRouter>
+                <Switch>
+                    <Route path="/SignupPage" exact component={SignupPage} />
+                </Switch>
+            </BrowserRouter> */}
+
+
+            <Container className="d-flex align-items-center justify-content-center con " >
                 <Container className="mt-5">
                     <Row>
-                        <Col className="text-center"> 
+                        <Col className="text-center">
                             <img src={logo} alt="icon" className="icon" />
+                            <h2>Alumni cell Login page</h2><br />
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Control type="email" name="email" placeholder="Enter email" value={email} onChange={changeHandler} /><br />
@@ -73,10 +93,10 @@ const UserAuth = () => {
                                     </p>
                                     <Button onClick={provider} className="primary btn-block btn1" type="submit">
                                         Signin with google
-                                    </Button><br /><br />
+                                    </Button>
+                                    <br /><br />
                                 </Form.Group>
-                                <p>Dont have an account? <a onClick={Signup} href="#">Signup here</a></p>
-
+                                <p>Dont have an account? <a onClick={Signup} href="#" >Signup here</a></p>
                             </Form>
                         </Col>
                     </Row>

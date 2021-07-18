@@ -5,6 +5,8 @@ import logo from './logo.png';
 import './login.css';
 import { auth } from './firebase';
 import firebase from 'firebase';
+import { Link } from 'react-router-dom'
+
 // import { StyledFirebaseAuth } from 'react-firebaseui';
 // import { Link } from 'react-router-dom';
 // import { BrowserRouter, Route, Switch } from 'react-router-dom';
@@ -71,7 +73,7 @@ const UserAuth = () => {
 
 
             <Container className="d-flex align-items-center justify-content-center con " >
-                <Container className="mt-5">
+                <Container className="">
                     <Row>
                         <Col className="text-center">
                             <img src={logo} alt="icon" className="icon" />
@@ -96,7 +98,7 @@ const UserAuth = () => {
                                     </Button>
                                     <br /><br />
                                 </Form.Group>
-                                <p>Dont have an account? <a onClick={Signup} href="#" >Signup here</a></p>
+                                <p>Dont have an account? <a onClick={Signup} href="#" ><Link to="./SignupPage">Signup here</Link></a></p>
                             </Form>
                         </Col>
                     </Row>

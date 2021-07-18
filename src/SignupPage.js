@@ -32,14 +32,20 @@ const SignupPage = () => {
                     <Row>
                         <Col className="text-center">
                             <img src={logo} alt="icon" className="icon" />
-                            <h2>Alumni cell Login page</h2><br />
+                            <h2>Alumni cell Sign page</h2><br />
                             <Form>
                                 <Form.Group controlId="formBasicEmail">
                                     <Form.Control type="email" name="email" placeholder="Enter email" value={email} onChange={changeHandler} /><br />
                                 </Form.Group>
 
                                 <Form.Group controlId="formBasicPassword">
-                                    <Form.Control type="password" name="password" placeholder="Password" value={password} onChange={changeHandler} /><br />
+                                    <Form.Control type="password" name="password" placeholder="Choose Password" value={password} onChange={changeHandler} /><br />
+                                </Form.Group>
+                                <Form.Group controlId="formBasicPassword">
+                                    <Form.Control type="text" name="FirstName" placeholder="FirstName" /><br />
+                                </Form.Group>
+                                <Form.Group controlId="formBasicPassword">
+                                    <Form.Control type="text" name="SecondName" placeholder="SecondName" /><br />
                                 </Form.Group>
                                 <Form.Group>
                                     <Button onClick={Signup} className="primary btn-block btn1" type="submit">

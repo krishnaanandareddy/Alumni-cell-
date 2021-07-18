@@ -22,7 +22,7 @@ function App() {
   },[])
   return (
     <div>
-      {User ? <Home User={User}/> : <UserAuth />}
+      <Home />
     </div>
   );
 }

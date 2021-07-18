@@ -6,7 +6,13 @@ import { Link } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { auth } from './firebase'
-// import {BrowserRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import UserAuth from './UserAuth';
+import AnnouncementSummary from './AnnouncementSummary'
+import SignupPage from './SignupPage'
+import EventAnnouncements from './EventAnnouncements';
+import Home from './Home'
+import Home1 from './Home1'
 
 // import { NavDropdown } from 'react-bootstrap'
 
@@ -14,15 +20,16 @@ import { auth } from './firebase'
 const NavBar = () => {
     return (
         <>
+
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand  className= "navbar-brand">Alumni Cell</Navbar.Brand>
-                    <Navbar.Brand className= "navbar-brand"><Link to="/Home" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand">Alumni Cell</Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link className= "navbar-brand"><Link to="/EventAnnouncements" style={{ textDecoration: 'none' }}><a className="link">Announcements</a></Link></Nav.Link>
-                            <Nav.Link className= "navbar-brand"><Link to="/EventAnnouncements" style={{ textDecoration: 'none' }} ><a className="link">Initiatives</a></Link></Nav.Link>
+                            <Nav.Link className="navbar-brand"><Link to="/EventAnnouncements" style={{ textDecoration: 'none' }}><a className="link">Announcements</a></Link></Nav.Link>
+                            <Nav.Link className="navbar-brand"><Link to="/EventAnnouncements" style={{ textDecoration: 'none' }} ><a className="link">Initiatives</a></Link></Nav.Link>
                             {/* <Nav.Link className= "navbar-brand link">Initiatives</Nav.Link> */}
                             {/* <NavDropdown className="link" title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

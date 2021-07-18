@@ -65,18 +65,12 @@ const UserAuth = () => {
     return (
         <>
 
-            {/* <BrowserRouter>
-                <Switch>
-                    <Route path="/SignupPage" exact component={SignupPage} />
-                </Switch>
-            </BrowserRouter> */}
-
 
             <Container className="d-flex align-items-center justify-content-center con " >
                 <Container className="">
                     <Row>
                         <Col className="text-center">
-                            <img src={logo} alt="icon" className="icon" />
+                            <img src={logo} alt="icon" className="iconoflogin" />
                             <h2>Alumni cell Login page</h2><br />
                             <Form>
                                 <Form.Group controlId="formBasicEmail">

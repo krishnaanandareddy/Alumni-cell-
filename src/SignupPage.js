@@ -31,7 +31,7 @@ const SignupPage = () => {
                 <Container className="mt-5">
                     <Row>
                         <Col className="text-center">
-                            <img src={logo} alt="icon" className="icon" />
+                            <img src={logo} alt="icon" className="iconoflogin" />
                             <h2>Alumni cell Sign page</h2><br />
                             <Form>
                                 <Form.Group controlId="formBasicEmail">

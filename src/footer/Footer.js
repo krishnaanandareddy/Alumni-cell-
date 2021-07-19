@@ -1,14 +1,13 @@
 import React from 'react'
 import { Row, Col } from 'react-bootstrap'
 import './footer.css'
-import imgPhone from "./Icons/phone.svg"
-import link from "./Icons/link-solid.svg"
-import mail from "./Icons/mail.svg"
-import facebook from "./Icons/facebook.png"
-import insta from "./Icons/insta.png"
-import google from "./Icons/google.png"
-import linkedin from "./Icons/linkedin.png"
-import Map from './Map'
+import imgPhone from "../Icons/phone.svg"
+import link from "../Icons/link-solid.svg"
+import mail from "../Icons/mail.svg"
+import facebook from "../Icons/facebook.png"
+import insta from "../Icons/insta.png"
+import google from "../Icons/google.png"
+import linkedin from "../Icons/linkedin.png"
 
 const Footer = () => {
     return (

@@ -3,16 +3,10 @@ import { Col, Container, Button, Row, Form } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css"
 import logo from './logo.png';
 import './login.css';
-import { auth } from './firebase';
+import { auth } from '../firebase';
 import firebase from 'firebase';
 import { Link } from 'react-router-dom'
-
-// import { StyledFirebaseAuth } from 'react-firebaseui';
-// import { Link } from 'react-router-dom';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import SignupPage from './SignupPage';
 // import db from './firebase';
-// import NavBar from './Navbar';
 
 
 const UserAuth = () => {
@@ -55,12 +49,6 @@ const UserAuth = () => {
             var credential = error.credential;
             // ...
         });
-
-
-
-
-
-
 
     return (
         <>

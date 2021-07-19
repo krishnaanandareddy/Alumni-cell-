@@ -3,7 +3,7 @@ import { Col, Container, Button, Row, Form } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css"
 import logo from './logo.png';
 import './login.css';
-import { auth } from './firebase';
+import { auth } from '../firebase';
 import firebase from 'firebase';
 
 

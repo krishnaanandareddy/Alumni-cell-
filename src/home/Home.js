@@ -1,10 +1,10 @@
 import React from 'react'
-import { auth } from './firebase'
-import NavBar from './Navbar'
-import Footer from './Footer';
+import { auth } from '../firebase'
+import NavBar from '../navbar/Navbar'
+import Footer from '../footer/Footer';
 import { Row, Col } from 'react-bootstrap';
-import director from "./Icons/director.jpg";
-import iiti from "./Icons/iiti.jpg";
+import director from "../Icons/director.jpg";
+import iiti from "../Icons/iiti.jpg";
 import './home.css'
 
 

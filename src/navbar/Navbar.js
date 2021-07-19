@@ -4,15 +4,14 @@ import { Container } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { auth } from './firebase'
+import { auth } from '../firebase'
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import UserAuth from './UserAuth';
-import AnnouncementSummary from './AnnouncementSummary'
-import SignupPage from './SignupPage'
-import EventAnnouncements from './EventAnnouncements';
-import Home from './Home'
-import Home1 from './Home1'
+import UserAuth from '../auth/UserAuth';
+import AnnouncementSummary from '../events/AnnouncementSummary'
+import SignupPage from '../auth/SignupPage'
+import EventAnnouncements from '../events/EventAnnouncements';
+import Home from '../home/Home'
+import Home1 from '../home/Home1'
 
 // import { NavDropdown } from 'react-bootstrap'
 

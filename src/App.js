@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { auth } from "./firebase";
-import UserAuth from "./UserAuth";
-import Navbar from "./Navbar";
+import UserAuth from "./auth/UserAuth";
+import Navbar from "./navbar/Navbar";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import AnnouncementSummary from './AnnouncementSummary'
-import SignupPage from './SignupPage'
-import EventAnnouncements from './EventAnnouncements';
-import Home from './Home'
+import AnnouncementSummary from './events/AnnouncementSummary'
+import SignupPage from './auth/SignupPage'
+import EventAnnouncements from './events/EventAnnouncements';
+import Home from './home/Home'
 
 function App() {
   const [User, setUser] = useState(null);

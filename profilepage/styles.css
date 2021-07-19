@@ -1,0 +1,81 @@
+.subhd {
+  font-variant: cursive;
+}
+.inputbox {
+  width: 100%;
+  max-width: 450px;
+  padding-left: 10px;
+}
+.first {
+  background-color: #08d9d6;
+  padding-left: 0;
+  border-radius: 5px;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.5);
+  font-size: 1vw;
+  margin-top: 150px;
+  padding: 25px;
+  width: 400px;
+}
+@media screen and (max-width: 500px) {
+  .first {
+    width: 250px;
+    font-size: 3vw;
+  }
+}
+@media screen and (min-width: 760px) {
+  .first {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1020px) {
+  .first {
+    width: 50%;
+  }
+}
+
+.first::before,
+.first::after {
+  content: "";
+  border-radius: 5%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    30deg,
+    #00f0f0,
+    #00ff00,
+    #ff6f6f,
+    #fb7afc,
+    #00f0f0,
+    #00ff00,
+    #ff6f6f,
+    #fb7afc
+  );
+  width: 100%;
+  height: 100%;
+  background-size: 500%;
+  z-index: -1;
+  transform: scale(1.05);
+  animation: animate 60s;
+  transition: scale 5s;
+}
+
+.first::after {
+  filter: blur(20px);
+}
+
+.first::hover {
+  transform: scale(1.2);
+}
+
+@keyframes animate {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}

@@ -7,6 +7,7 @@ import AnnouncementSummary from './events/AnnouncementSummary'
 import SignupPage from './auth/SignupPage'
 import EventAnnouncements from './events/EventAnnouncements';
 import Home from './home/Home'
+import { AuthProvider } from "./contexts/AuthContext";
 
 function App() {
   const [User, setUser] = useState(null);
@@ -25,8 +26,8 @@ function App() {
     })
   }, [])
   return (
-    <>
-      <BrowserRouter>
+    <BrowserRouter>
+      <AuthProvider>
         <Navbar />
         <Switch>
           <Route path="/EventAnnouncements" exact component={EventAnnouncements} />
@@ -35,8 +36,8 @@ function App() {
           <Route path="/" exact component={Home} />
           <Route path="/AnnouncementSummary" exact component={AnnouncementSummary} />
         </Switch>
-      </BrowserRouter>
-    </>
+      </AuthProvider>
+    </BrowserRouter>
   );
 }
 

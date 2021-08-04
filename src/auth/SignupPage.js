@@ -1,29 +1,40 @@
-import React, { useState, useEffect } from 'react'
-import { Col, Container, Button, Row, Form } from 'react-bootstrap';
+import React, { useState, useEffect, useRef } from 'react'
+import { Col, Container, Button, Row, Form, Card } from 'react-bootstrap';
 import "bootstrap/dist/css/bootstrap.css"
 import logo from './logo.png';
 import './login.css';
-import { auth } from '../firebase';
-import firebase from 'firebase';
+import { Alert } from 'react-bootstrap';
+import { useAuth } from '../contexts/AuthContext';
+import { Link, useHistory } from 'react-router-dom';
 
 
+export default function SignupPage() {
+    const emailRef = useRef()
+    const passwordRef = useRef()
+    const passwordConfirmRef = useRef()
+    const { signup, currentUser } = useAuth()
+    const [error, setError] = useState("")
+    const [loading, setLoading] = useState(false)
+    const history = useHistory()
 
-const SignupPage = () => {
-    const [data, setData] = useState({
-        email: "",
-        password: ""
+    async function handleSubmit(e) {
+        e.preventDefault()
 
-    })
-    const { email, password } = data;
-    const changeHandler = e => {
-        setData({ ...data, [e.target.name]: e.target.value })
+        if (passwordRef.current.value !== passwordConfirmRef.current.value) {
+            return setError("Passwords do not match")
+        }
+
+        try {
+            setError("")
+            setLoading(true)
+            await signup(emailRef.current.value, passwordRef.current.value)
+            history.push("/")
+        } catch {
+            setError("Failed to create an account")
+        }
+
+        setLoading(false)
     }
-    const Signup = e => {
-        e.preventDefault();
-        auth.createUserWithEmailAndPassword(email, password).then(user => console.log(user)).catch(err => console.log(err))
-    }
-
-
 
     return (
         <>
@@ -33,33 +44,36 @@ const SignupPage = () => {
                         <Col className="text-center">
                             <img src={logo} alt="icon" className="iconoflogin" />
                             <h2>Alumni cell Sign page</h2><br />
-                            <Form>
-                                <Form.Group controlId="formBasicEmail">
-                                    <Form.Control type="email" name="email" placeholder="Enter email" value={email} onChange={changeHandler} /><br />
+                            {error && <Alert variant="danger">{error}</Alert>}
+                            {currentUser.email}
+                            <Form onSubmit={handleSubmit}>
+                                <Form.Group id="email">
+                                    {/* <Form.Label>Email</Form.Label> */}
+                                    {/* <Form.Control type="email" ref={emailRef} required /> */}
+                                    <Form.Control type="email" name="email" placeholder="Enter email" ref={emailRef} required /><br />
                                 </Form.Group>
-
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Control type="password" name="password" placeholder="Choose Password" value={password} onChange={changeHandler} /><br />
+                                <Form.Group id="password">
+                                    {/* <Form.Label>Password</Form.Label> */}
+                                    {/* <Form.Control type="password" ref={passwordRef} required /> */}
+                                    <Form.Control type="password" name="password" placeholder="Choose Password" ref={passwordRef} required /><br />
                                 </Form.Group>
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Control type="text" name="FirstName" placeholder="FirstName" /><br />
+                                <Form.Group id="password-confirm">
+                                    {/* <Form.Label>Password Confirmation</Form.Label> */}
+                                    {/* <Form.Control type="password" ref={passwordConfirmRef} required /> */}
+                                    <Form.Control type="password" name="password" placeholder="Confirm Password" ref={passwordConfirmRef} required /><br />
                                 </Form.Group>
-                                <Form.Group controlId="formBasicPassword">
-                                    <Form.Control type="text" name="SecondName" placeholder="SecondName" /><br />
-                                </Form.Group>
-                                <Form.Group>
-                                    <Button onClick={Signup} className="primary btn-block btn1" type="submit">
-                                        Signup
-                                    </Button>
-                                </Form.Group>
+                                {/* <Button disabled={loading} className="w-100" type="submit"> */}
+                                <Button disabled={loading} className="primary btn-block btn1" type="submit" >
+                                    Sign Up
+                                </Button>
                             </Form>
+                            <div className="w-100 text-center mt-2">
+                                Already have an account? <Link to="/UserAuth">Log In</Link>
+                            </div>
                         </Col>
-
                     </Row>
                 </Container>
             </Container>
         </>
     )
 }
-
-export default SignupPage

@@ -3,10 +3,12 @@ import { Col, Row } from 'react-bootstrap'
 import { Card } from 'react-bootstrap'
 import AnnouncementsList from './AnnouncementsList'
 import './announcements.css'
+import NavBar from '../navbar/Navbar'
 
 const EventAnnouncements = () => {
     return (
         <div>
+            <NavBar />
             <Row>
                 <Col xs={12} sm={3} className="text-center notifications-container">
                     <Card.Body>
@@ -24,7 +26,6 @@ const EventAnnouncements = () => {
                 </Card.Body>
                 </Col>
                 <Col xs={12} sm={9} className="announcement-container text-center" >
-                {/* <Col xs={12} sm={{span: 8, offset: 1}} className="announcement-container text-center" > */}
                     <AnnouncementsList />
                     <AnnouncementsList />
                     <AnnouncementsList />

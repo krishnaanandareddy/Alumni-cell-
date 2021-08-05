@@ -1,25 +1,28 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { Navbar } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap'
-import { auth } from '../firebase'
-import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import UserAuth from '../auth/UserAuth';
-import AnnouncementSummary from '../events/AnnouncementSummary'
-import SignupPage from '../auth/SignupPage'
-import EventAnnouncements from '../events/EventAnnouncements';
-import Home from '../home/Home'
-import Home1 from '../home/Home1'
-
-// import { NavDropdown } from 'react-bootstrap'
+import { useAuth } from '../contexts/AuthContext'
 
 
 const NavBar = () => {
+    const [error, setError]=useState("")
+    const { currentUser, logout } = useAuth()
+    const history = useHistory()  
+
+    async function handleLogout() {
+        setError('')
+        try {
+            await logout()
+            history.pushState('/Home')
+        } catch {
+            setError('Failed to signout')
+        }
+    }
     return (
         <>
-
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
                     <Navbar.Brand className="navbar-brand">Alumni Cell</Navbar.Brand>
@@ -39,10 +42,24 @@ const NavBar = () => {
                             </NavDropdown> */}
                         </Nav>
                         <Nav>
-                            <Nav.Link onClick={() => auth.signOut()}><a className="link">signout</a></Nav.Link>
-                            <Nav.Link eventKey={2}><Link to="/UserAuth" style={{ textDecoration: 'none' }}>
-                                <a className="link">Login/signup</a></Link>
-                            </Nav.Link>
+
+                            {!!currentUser ? (
+                                <>
+                                    <p>{`Welcome, ${currentUser.displayName}`}</p>
+                                    <Nav.Link eventKey={2}><Link to="/Profile" style={{ textDecoration: 'none' }}>
+                                        <a className="link">Profile</a></Link>
+                                    </Nav.Link>
+                                    <Nav.Link eventKey={2}>
+                                        <a style={{ textDecoration: 'none' }} className="link" onClick={handleLogout}>logout</a>
+                                    </Nav.Link>
+                                </>
+                            ) : (
+                                <>
+                                    <Nav.Link eventKey={2}><Link to="/UserAuth" style={{ textDecoration: 'none' }}>
+                                        <a className="link" >Login/signup</a></Link>
+                                    </Nav.Link>
+                                </>
+                            )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>

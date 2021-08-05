@@ -6,13 +6,14 @@ import './login.css';
 import { Alert } from 'react-bootstrap';
 import { useAuth } from '../contexts/AuthContext';
 import { Link, useHistory } from 'react-router-dom';
+import NavBar from '../navbar/Navbar';
 
 
 export default function SignupPage() {
     const emailRef = useRef()
     const passwordRef = useRef()
     const passwordConfirmRef = useRef()
-    const { signup, currentUser } = useAuth()
+    const { signup } = useAuth()
     const [error, setError] = useState("")
     const [loading, setLoading] = useState(false)
     const history = useHistory()
@@ -38,6 +39,7 @@ export default function SignupPage() {
 
     return (
         <>
+            <NavBar />
             <Container className="d-flex align-items-center justify-content-center con " >
                 <Container className="mt-5">
                     <Row>
@@ -45,7 +47,6 @@ export default function SignupPage() {
                             <img src={logo} alt="icon" className="iconoflogin" />
                             <h2>Alumni cell Sign page</h2><br />
                             {error && <Alert variant="danger">{error}</Alert>}
-                            {currentUser.email}
                             <Form onSubmit={handleSubmit}>
                                 <Form.Group id="email">
                                     {/* <Form.Label>Email</Form.Label> */}

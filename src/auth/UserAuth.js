@@ -5,6 +5,7 @@ import logo from './logo.png';
 import './login.css';
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext';
+import NavBar from '../navbar/Navbar';
 
 
 const UserAuth = () => {
@@ -33,6 +34,7 @@ const UserAuth = () => {
 
     return (
         <>
+            <NavBar />
             <Container className="d-flex align-items-center justify-content-center con " >
                 <Container className="">
                     <Row>
@@ -52,14 +54,15 @@ const UserAuth = () => {
                                         Login
                                     </Button><br /><br />
                                     <p>
-                                        Or
+                                        <Link to ="/forgotPassword" style={{ textDecoration: 'none' }}>Forgot password??</Link>  Or
                                     </p>
-                                    {/* <Button onClick={provider} className="primary btn-block btn1" type="submit">
+                                    {/* <Button onClick={provider} className="primary btn-block btn1" type="submit"> */}
+                                    <Button className="primary btn-block btn1" type="submit">
                                         Signin with google
-                                    </Button> */}
+                                    </Button>
                                     <br /><br />
                                 </Form.Group>
-                                <p>Dont have an account? <a href="#" ><Link to="./SignupPage">Signup here</Link></a></p>
+                                <p>Dont have an account?<Link to="./SignupPage" style={{ textDecoration: 'none' }}>Signup here</Link></p>
                             </Form>
                         </Col>
                     </Row>

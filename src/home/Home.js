@@ -11,6 +11,7 @@ import './home.css'
 const Home = (User) => {
     return (
         <>
+            <NavBar />
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} md={4}>

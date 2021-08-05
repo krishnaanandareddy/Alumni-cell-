@@ -6,7 +6,9 @@ import './login.css';
 import { Link, useHistory } from 'react-router-dom'
 import { useAuth } from '../contexts/AuthContext';
 import NavBar from '../navbar/Navbar';
-
+import { signInWithGoogle } from '../firebase';
+import firebase from 'firebase';
+import { auth } from '../firebase';
 
 const UserAuth = () => {
     const emailRef = useRef()
@@ -30,6 +32,15 @@ const UserAuth = () => {
 
         setLoading(false)
     }
+    const googleProvider = new firebase.auth.GoogleAuthProvider()
+    const signInWithGoogle = () => {
+        auth.signInWithPopup(googleProvider).then((res) => {
+            history.push("/")
+        }).catch((error) => {
+            setError("Failed to login")
+        })
+    }
+
 
 
     return (
@@ -54,10 +65,9 @@ const UserAuth = () => {
                                         Login
                                     </Button><br /><br />
                                     <p>
-                                        <Link to ="/forgotPassword" style={{ textDecoration: 'none' }}>Forgot password??</Link>  Or
+                                        <Link to="/forgotPassword" style={{ textDecoration: 'none' }}>Forgot password??</Link>  Or
                                     </p>
-                                    {/* <Button onClick={provider} className="primary btn-block btn1" type="submit"> */}
-                                    <Button className="primary btn-block btn1" type="submit">
+                                    <Button className="primary btn-block btn1" onClick={signInWithGoogle}>
                                         Signin with google
                                     </Button>
                                     <br /><br />

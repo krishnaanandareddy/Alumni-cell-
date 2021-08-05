@@ -6,12 +6,14 @@ import { Row, Col } from 'react-bootstrap';
 import director from "../Icons/director.jpg";
 import iiti from "../Icons/iiti.jpg";
 import './home.css'
+import Carouselforhome from '../Carousel/Carouselforhome';
 
 
 const Home = (User) => {
     return (
         <>
             <NavBar />
+            {/* <Carouselforhome /> */}
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} md={4}>

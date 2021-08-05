@@ -26,6 +26,7 @@ export default function Profile() {
         <h5>
             Email:{currentUser.email}
         </h5>
+        <p>name:{currentUser.displayName}</p>
         <Button variant="link" onClick={handleLogout}>
             Signout
         </Button>

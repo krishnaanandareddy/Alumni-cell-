@@ -1,4 +1,6 @@
 import firebase from "firebase";
+// import { Link, useHistory } from 'react-router-dom'
+
 var firebaseConfig = {
   apiKey: "AIzaSyA7vDFqoT7uUR0P4YkEnW-x6PWS4e5OjCk",
   authDomain: "alumni-cell-68ee7.firebaseapp.com",
@@ -18,6 +20,12 @@ var firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 const auth = firebase.auth();
+// const history = useHistory()
 
 export default db;
 export { auth };
+
+
+
+
+

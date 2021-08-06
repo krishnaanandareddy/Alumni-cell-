@@ -13,7 +13,7 @@ const Home = (User) => {
     return (
         <>
             <NavBar />
-            {/* <Carouselforhome /> */}
+             <Carouselforhome /> 
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} md={4}>

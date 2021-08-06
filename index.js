@@ -23,15 +23,9 @@ function App() {
         {/* <div className="slide-holder">
            <iframe src="https://www.youtube.com/embed/n0F6hSpxaFc" />
            <div class="text-container">
-             <h2>Skiing</h2>
-             <p>
-               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-               eiusmod tempor incididunt ut labore et dolore magna aliqua se. Ut
-               enim ad minim veniam, quis nostrud exercitation ullamco laboris
-               nisi ut aliquip ex ea commodo consequat.
-             </p>
-           </div>
-         </div> */}
+            </div>
+            </div> */}
+             
         <div className="slide-holder">
           <img
             alt=""

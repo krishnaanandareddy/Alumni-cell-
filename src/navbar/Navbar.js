@@ -50,6 +50,9 @@ const NavBar = () => {
                                     <Nav.Link eventKey={2}><Link to="/Profile" style={{ textDecoration: 'none' }}>
                                         <a className="link">Profile</a></Link>
                                     </Nav.Link>
+                                    <Nav.Link eventKey={2}><Link to="/Chat" style={{ textDecoration: 'none' }}>
+                                        <a className="link">Chat</a></Link>
+                                    </Nav.Link>
                                     <Nav.Link eventKey={2}>
                                         <a style={{ textDecoration: 'none' }} className="link" onClick={handleLogout}>logout</a>
                                     </Nav.Link>

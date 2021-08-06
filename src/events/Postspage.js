@@ -16,9 +16,9 @@ const Postspage = () => {
     useEffect(() => {
         // this is where the code runs
         db.collection("posts").orderBy("timestamp", "desc")
-        .onSnapshot((snapshot) => {
-            setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })));
-        });
+            .onSnapshot((snapshot) => {
+                setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })));
+            });
     }, []);
 
     return (
@@ -39,20 +39,22 @@ const Postspage = () => {
                         </>
                     )}
 
-                    {posts.map(({ id, post }) => (
-                        <Post
-                            key={id}
-                            id={id}
-                            profileUrl={post.profileUrl}
-                            username={post.username}
-                            photoUrl={post.photoUrl}
-                            caption={post.caption}
-                            comments={post.comments}
-                            user={currentUser}
-                        />
-                    ))}
+                    <div className="postinposts">
+                        {posts.map(({ id, post }) => (
+                            <Post
+                                key={id}
+                                id={id}
+                                profileUrl={post.profileUrl}
+                                username={post.username}
+                                photoUrl={post.photoUrl}
+                                caption={post.caption}
+                                comments={post.comments}
+                                user={currentUser}
+                            />
+                        ))}
+                    </div>
                 </div>
-            <Footer />
+                <Footer />
             </div>
         </>
     )

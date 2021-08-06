@@ -10,6 +10,7 @@ import Profile from "./profile/Profile";
 import UpdateProfile from "./profile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import forgotPassword from "./auth/forgotPassword";
+import Chat from "./chat/Chat";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" exact component={Home} />
           <PrivateRoute path="/Profile" exact component={Profile} />
           <Route path="/UpdateProfile" exact component={UpdateProfile} />
+          <Route path="/Chat" exact component={Chat} />
         </Switch>
       </AuthProvider>
     </BrowserRouter>

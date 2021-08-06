@@ -1,0 +1,60 @@
+.image{
+    max-height: 250px;
+    max-width: 250px;
+}
+.navbar-brand {
+    padding-top: 0.3125rem; 
+    padding-bottom: 0.3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    text-decoration: none;
+    white-space: nowrap;
+}
+.link{
+    text-decoration: none;
+    color: #fff;
+}
+.notifications-container{
+
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+
+}
+.announcement-container{
+    /* margin: 20px; */
+    box-shadow:0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+.post{
+    width: 100%;
+    max-width: 650px;
+    border-radius:4px ;
+    background-color: #fff;
+    padding: 12px;
+    margin: 10px;
+}
+.captionforpost{
+    border: none;
+    width: 100%;
+    outline: none;
+    margin-top: 6px;
+    font-size: 14px;
+}
+.captionforpost :focus{
+    outline:none;
+}
+.postimageupload > input{
+    display: none;
+}
+.postuploadbtn{
+    border:none;
+    background-color: #fff;
+}
+.bottomofpost{
+    display: flex;
+    justify-content: space-between;
+}
+#imagepreview{
+    display: none;
+    height: 120px;
+    margin: 6px;
+    border-radius: 6px;
+}

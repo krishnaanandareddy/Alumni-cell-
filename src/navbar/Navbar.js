@@ -1,16 +1,17 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react'
 import { Navbar } from 'react-bootstrap'
 import { Container } from 'react-bootstrap'
 import { Nav } from 'react-bootstrap'
 import { Link, useHistory } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
+import "./navbar.css"
 
 
 const NavBar = () => {
-    const [error, setError]=useState("")
+    const [error, setError] = useState("")
     const { currentUser, logout } = useAuth()
-    const history = useHistory()  
+    const history = useHistory()
 
     async function handleLogout() {
         setError('')
@@ -30,8 +31,8 @@ const NavBar = () => {
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
-                            <Nav.Link className="navbar-brand"><Link to="/EventAnnouncements" style={{ textDecoration: 'none' }}><a className="link">Announcements</a></Link></Nav.Link>
-                            <Nav.Link className="navbar-brand"><Link to="/EventAnnouncements" style={{ textDecoration: 'none' }} ><a className="link">Initiatives</a></Link></Nav.Link>
+                            <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }}><a className="link">Posts</a></Link></Nav.Link>
+                            <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }} ><a className="link">Initiatives</a></Link></Nav.Link>
                             {/* <Nav.Link className= "navbar-brand link">Initiatives</Nav.Link> */}
                             {/* <NavDropdown className="link" title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -51,6 +52,9 @@ const NavBar = () => {
                                     </Nav.Link>
                                     <Nav.Link eventKey={2}>
                                         <a style={{ textDecoration: 'none' }} className="link" onClick={handleLogout}>logout</a>
+                                    </Nav.Link>
+                                    <Nav.Link >
+                                        <img src={currentUser.photoURL} className="navbar_img" />
                                     </Nav.Link>
                                 </>
                             ) : (

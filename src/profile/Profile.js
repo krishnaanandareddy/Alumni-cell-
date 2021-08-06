@@ -26,11 +26,15 @@ export default function Profile() {
         <h5>
             Email:{currentUser.email}
         </h5>
+        <img src={currentUser.photoURL} />
         <p>name:{currentUser.displayName}</p>
         <Button variant="link" onClick={handleLogout}>
             Signout
         </Button>
         <Link to = "/UpdateProfile">Update</Link>
+        <Button variant="link">
+            <Link to ="/EventAnnouncements">Create Post</Link>
+        </Button>
         
         </>
     )

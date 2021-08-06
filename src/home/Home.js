@@ -11,7 +11,7 @@ import Carouselforhome from '../Carousel/Carouselforhome';
 
 const Home = (User) => {
     return (
-        <>
+        <div className="home">
             <NavBar />
             {/* <Carouselforhome /> */}
             <div className="margin-container-home">
@@ -80,7 +80,7 @@ const Home = (User) => {
                 </Row>
             </div>
             <Footer />
-        </>
+        </div>
     )
 }
 

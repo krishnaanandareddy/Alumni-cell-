@@ -3,7 +3,7 @@ import UserAuth from "./auth/UserAuth";
 import NavBar from "./navbar/Navbar";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignupPage from './auth/SignupPage'
-import Posts from './events/Posts';
+import Postspage from './events/Postspage';
 import Home from './home/Home'
 import { AuthProvider } from "./contexts/AuthContext";
 import Profile from "./profile/Profile";
@@ -16,7 +16,7 @@ function App() {
     <BrowserRouter>
       <AuthProvider>
         <Switch>
-          <Route path="/Posts" exact component={Posts} />
+          <Route path="/Posts" exact component={Postspage} />
           <Route path="/UserAuth" exact component={UserAuth} />
           <Route path="/SignupPage" exact component={SignupPage} />
           <Route path="/forgotPassword" exact component={forgotPassword} />

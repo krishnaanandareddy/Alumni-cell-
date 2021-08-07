@@ -33,7 +33,7 @@ const auth = firebase.auth();
 // const history = useHistory()
 const storage = firebase.storage();
 
-export default {db};
+export default db;
 export { auth,storage };
 
 

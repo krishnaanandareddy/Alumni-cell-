@@ -3,6 +3,7 @@ import NavBar from '../navbar/Navbar'
 import db from '../firebase'
 import { auth } from '../firebase'
 import SendMessage from './SendMessage'
+import  '.Chat.css'
 
 
 
@@ -22,7 +23,7 @@ export default function Chat() {
             Chat goes her
             {messages.map((id,text,photoURL)=>{
                 <div>
-                   <div key={id} >
+                   <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
                         <img src={photoURL} alt=""></img>
                         <p>{text}</p> 
                    </div> 

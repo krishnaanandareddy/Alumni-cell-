@@ -7,6 +7,7 @@ export default function Carouselforhome() {
     return (
         <div class="carousel-body">
             <h1>PHOTO GALLERY</h1>
+            <div className="AlumniImages align-items-center justify-content-center sizes text-center" >
             <Carousel
                 showThumbs={true}
                 showStatus={false}
@@ -96,6 +97,9 @@ export default function Carouselforhome() {
             
                 </div>
             </Carousel>
+            </div>
         </div>
-    )
+    );
 }
+
+

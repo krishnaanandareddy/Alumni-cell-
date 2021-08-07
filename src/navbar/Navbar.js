@@ -6,6 +6,7 @@ import { Link, useHistory } from 'react-router-dom'
 import { NavDropdown } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import "./navbar.css"
+import Avatar from "@material-ui/core/Avatar";
 
 
 const NavBar = () => {
@@ -26,11 +27,12 @@ const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand className="navbar-brand">Alumni Cell</Navbar.Brand>
-                    <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Alumni Cell</a></Link></Navbar.Brand>
+                    {/* <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand> */}
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
+                            <Nav.Link className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Nav.Link>
                             <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }}><a className="link">Posts</a></Link></Nav.Link>
                             <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }} ><a className="link">Initiatives</a></Link></Nav.Link>
                             {/* <Nav.Link className= "navbar-brand link">Initiatives</Nav.Link> */}
@@ -46,7 +48,7 @@ const NavBar = () => {
 
                             {!!currentUser ? (
                                 <>
-                                    <p>{`Welcome, ${currentUser.displayName}`}</p>
+                                    {/* <p>{`Welcome, ${currentUser.displayName}`}</p> */}
                                     <Nav.Link eventKey={2}><Link to="/Profile" style={{ textDecoration: 'none' }}>
                                         <a className="link">Profile</a></Link>
                                     </Nav.Link>
@@ -56,9 +58,24 @@ const NavBar = () => {
                                     <Nav.Link eventKey={2}>
                                         <a style={{ textDecoration: 'none' }} className="link" onClick={handleLogout}>logout</a>
                                     </Nav.Link>
-                                    <Nav.Link >
-                                        <img src={currentUser.photoURL} className="navbar_img" />
-                                    </Nav.Link>
+                                    {/* <Nav.Link > */}
+                                    {
+                                        !!currentUser.photoURL ? (
+                                            <>
+                                            <img src={currentUser.photoURL} className="navbar_img" />
+                                            </>
+                                        ) : (
+                                            <>
+                                                <Avatar
+                                                    alt={currentUser.email.toLowerCase()}
+                                                    className="navbar_img"
+                                                >
+                                                    {currentUser.email.charAt(0)}
+                                                </Avatar>
+                                            </>
+                                        )
+                                    }
+                                    {/* </Nav.Link> */}
                                 </>
                             ) : (
                                 <>
@@ -74,5 +91,4 @@ const NavBar = () => {
         </>
     )
 }
-
 export default NavBar

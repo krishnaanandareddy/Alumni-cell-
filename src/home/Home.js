@@ -16,14 +16,14 @@ const Home = (User) => {
             {/* <Carouselforhome /> */}
             <div className="margin-container-home">
                 <Row>
-                    <Col sm={12} md={4}>
+                    <Col sm={12} lg={4}>
                         <div>
                             <div className="iiti-image text-center">
                                 <img src={iiti} />
                             </div>
                         </div>
                     </Col>
-                    <Col sm={12} md={8}>
+                    <Col sm={12} lg={8}>
                         <div>
                             <div className="iiti-message text-center">
                                 <h3>
@@ -48,7 +48,7 @@ const Home = (User) => {
 
             <div className="margin-container-home">
                 <Row>
-                    <Col sm={12} md={8}>
+                    <Col sm={12} lg={8}>
                         <div >
                             <div className="director-message text-center">
                                 <h3>
@@ -69,7 +69,7 @@ const Home = (User) => {
                             </div>
                         </div>
                     </Col>
-                    <Col sm={12} md={4}>
+                    <Col sm={12} lg={4}>
                         <div>
                             <div className="director-image text-center">
                                 <img src={director} />

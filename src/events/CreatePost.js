@@ -43,6 +43,7 @@ export default function CreatePost() {
                         photoUrl: imageUrl,
                         username: currentUser.email,
                         profileUrl: currentUser.photoURL
+                        
                     })
                 })
                 setCaption("");

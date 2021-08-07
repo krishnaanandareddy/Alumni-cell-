@@ -104,6 +104,7 @@
 /* for posts */
 .posts{
     background-color: #EEEEEE;
+    justify-content: center;
 }
 .postdeletebtn{
     background-color: #fff;
@@ -112,4 +113,16 @@
 .postinposts{
     margin-top: 24px;
     align-self: center;
+}
+.postscol{
+    justify-content: center;
+    align-items: center;
+}
+.createpostinpostspage{
+    display: flex;
+    justify-content: center;
+}
+.postsbox{
+    display: flex;
+    justify-content: center;
 }

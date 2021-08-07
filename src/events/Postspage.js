@@ -29,7 +29,7 @@ const Postspage = () => {
                     {/* <div className="text-center"> */}
                     {!!currentUser ? (
                         <>
-                            <div>
+                            <div className="createpostinpostspage">
                                 <CreatePost />
                             </div>
                         </>
@@ -38,23 +38,24 @@ const Postspage = () => {
                             <p>signin to create posts or any announcements</p>
                         </>
                     )}
-
-                    <div className="postinposts">
-                        {posts.map(({ id, post }) => (
-                            <Post
-                                key={id}
-                                id={id}
-                                profileUrl={post.profileUrl}
-                                username={post.username}
-                                photoUrl={post.photoUrl}
-                                caption={post.caption}
-                                comments={post.comments}
-                                user={currentUser}
-                            />
-                        ))}
+                    <div className="postsbox">
+                        <div className="postinposts ">
+                            {posts.map(({ id, post }) => (
+                                <Post
+                                    key={id}
+                                    id={id}
+                                    profileUrl={post.profileUrl}
+                                    username={post.username}
+                                    photoUrl={post.photoUrl}
+                                    caption={post.caption}
+                                    comments={post.comments}
+                                    user={currentUser}
+                                />
+                            ))}
+                            <Footer />
+                        </div>
                     </div>
                 </div>
-                <Footer />
             </div>
         </>
     )

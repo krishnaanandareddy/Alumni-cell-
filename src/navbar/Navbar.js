@@ -25,7 +25,7 @@ const NavBar = () => {
     }
     return (
         <>
-            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className="header">
                 <Container>
                     <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Alumni Cell</a></Link></Navbar.Brand>
                     {/* <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand> */}

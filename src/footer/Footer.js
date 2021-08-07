@@ -20,17 +20,17 @@ const Footer = () => {
                                 <h4>Contact Info</h4>
                                 <p>Indian Institute of Technology Indore,<br />Khandwa Road, Simrol,<br />Indore- 453552<br />India</p>
                                 <img src={imgPhone} className="icon" /><a href="tel:91-7324-306717" className=
-                                    "links-of-footer">  91-7324-306717</a><a> / </a><a href="tel:91-731-2438717" className="links-of-footer" >91-731-2438717</a><br />
-                                <img src={link} className="icon" /><a href="http://iiti.ac.in/" className="links-of-footer" > http://iiti.ac.in/</a><br />
-                                <img src={mail} className="icon" /><a href="coordinatoralumni@iiti.ac.in" className="links-of-footer" > coordinatoralumni@iiti.ac.in</a><br />
+                                    "links-of-footer"> <strong> 91-7324-306717</strong></a><a> / </a><a href="tel:91-731-2438717" className="links-of-footer" ><strong>91-731-2438717</strong></a><br />
+                                <img src={link} className="icon" /><a href="http://iiti.ac.in/" className="links-of-footer" ><strong>http://iiti.ac.in/</strong>/</a><br />
+                                <img src={mail} className="icon" /><a href="coordinatoralumni@iiti.ac.in" className="links-of-footer" > <strong>coordinatoralumni@iiti.ac.in</strong></a><br />
                             </div>
                             <h4>Connect Us</h4>
-                            <div className="icon-container">
+                            {/* <div className="icon-container">
                                 <img src={facebook} className="facebook-icon" />
                                 <img src={insta} className="insta-icon" />
                                 <img src={google} className="facebook-icon" />
                                 <img src={linkedin} className="insta-icon" />
-                            </div>
+                            </div> */}
                         </div>
                     </div>
                 </Col>

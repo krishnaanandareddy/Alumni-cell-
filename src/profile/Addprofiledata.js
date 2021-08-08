@@ -24,11 +24,11 @@ export default function Addprofiledata() {
     const { currentUser } = useAuth()
     const history = useHistory()
 
-    const skip = () =>{
+    const skip = () => {
         history.push("/Profile")
     }
-    const handleupload = () => {
-
+    function handleSubmit(e) {
+        e.preventDefault()
         db.collection("userinfo").doc(currentUser.email).set({
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             Adress: adress1,
@@ -59,128 +59,68 @@ export default function Addprofiledata() {
             <NavBar />
             <div style={{ backgroundColor: "#EEEEEE" }}>
                 <div>
-                    <Form>
+                    <Form onSubmit={handleSubmit}>
                         <Row className="detailsboxcontainer">
                             <div className="headingblockipropage">
                                 <h3>Contact Information</h3>
                             </div>
                             <Col sm={6}>
+
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Name"
-                                        className="mb-3"
-                                        onChange={(e) => { setName1(e.target.value)}}
-                                        required
-                                    >
-                                        <Form.Control
-                                            value={name1}  required/>
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Enter Name" onChange={(e) => { setName1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="phone number"
-                                        className="mb-3"
-                                        onChange={(e) => { setPhonenumber1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={phonenumber1} required />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="phone number" onChange={(e) => { setPhonenumber1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Course/Degree"
-                                        className="mb-3"
-                                        onChange={(e) => { setCourse1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={course1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Course/Degree" onChange={(e) => { setCourse1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Division/Department"
-                                        className="mb-3"
-                                        onChange={(e) => { setDepartment1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={department1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Division/Department" onChange={(e) => { setDepartment1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Year of joining"
-                                        className="mb-3"
-                                        onChange={(e) => { setJoiningyear1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={joiningyear1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Year of joining" onChange={(e) => { setJoiningyear1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                             </Col>
                             <Col sm={6}>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Adress"
-                                        className="mb-3"
-                                        onChange={(e) => { setAdress1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={adress1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Adress" onChange={(e) => { setAdress1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="State"
-                                        className="mb-3"
-                                        onChange={(e) => { setState1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={state1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="State" onChange={(e) => { setState1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="pincode"
-                                        className="mb-3"
-                                        onChange={(e) => { setPincode1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={pincode1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="pincode" onChange={(e) => { setPincode1(e.target.value) }} required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Country"
-                                        className="mb-3"
-                                        onChange={(e) => { setCountry1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={country1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Country" onChange={(e) => { setCountry1(e.target.value) }}required /><br />
+                                    </Form.Group>
                                 </div>
                                 <div className="detailsbox">
-                                    <FloatingLabel
-                                        controlId="floatingInput"
-                                        label="Expected year of graduation"
-                                        className="mb-3"
-                                        onChange={(e) => { setEndingyear1(e.target.value) }}
-                                    >
-                                        <Form.Control
-                                            value={endingyear1} />
-                                    </FloatingLabel>
+                                    <Form.Group >
+                                        <Form.Control type="text" placeholder="Expected year of graduation" onChange={(e) => { setEndingyear1(e.target.value) }}required /><br />
+                                    </Form.Group>
                                 </div>
                             </Col>
                             <div className="add-prodata-submitbtn-container">
-                                <Button type="submit" onClick={handleupload} variant="contained" color="primary" className="add-prodata-submitbtn">Submit</Button>
+                                <Button type="submit" variant="contained" color="primary" className="add-prodata-submitbtn">Submit</Button>
                             </div>
                             <div className="add-prodata-submitbtn-container">
                                 <Button type="submit" onClick={skip} variant="contained" color="primary" className="add-prodata-submitbtn">if already submitted, skip</Button>

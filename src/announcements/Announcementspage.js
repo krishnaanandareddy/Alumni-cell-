@@ -26,7 +26,6 @@ const Postspage = () => {
             <NavBar />
             <div className="posts">
                 <div>
-                    {/* <div className="text-center"> */}
                     {!!currentUser ? (
                         <>
                             <div className="createpostinpostspage">

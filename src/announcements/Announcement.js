@@ -51,6 +51,7 @@ export default function Post({ id, username, profileUrl, photoUrl, caption, comm
             </div>
             <div className="postbottom" >
                 <p><strong style={{ marginRight: "5px" }}>{username}</strong>{caption}</p>
+                
             </div>
             
         </div>

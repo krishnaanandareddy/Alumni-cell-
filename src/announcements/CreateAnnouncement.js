@@ -8,7 +8,7 @@ import { storage } from '../firebase';
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 
-export default function CreatePost() {
+export default function CreateAnnouncement() {
     const [caption, setCaption] = useState("")
     const [image, setImage] = useState(null)
     const { currentUser } = useAuth()

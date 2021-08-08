@@ -16,6 +16,7 @@ import Addprofiledata from "./profile/Addprofiledata";
 import Editprofiledata from "./profile/Editprofiledata";
 import Users from "./users/Users";
 import Announcementspage from "./announcements/Announcementspage"
+import CreateAnnouncement from "./announcements/CreateAnnouncement";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/Addprofiledata" exact component={Addprofiledata} />
           <Route path="/UpdateProfile" exact component={UpdateProfile} />
           <Route path="/Users" exact component={Users} />
+          <Route path="/CreateAnnouncement" exact component={CreateAnnouncement} />
 
         </Switch>
       </AuthProvider>

@@ -58,7 +58,7 @@ export default function CreatePost() {
 
     return (
         <div className="createpost">
-            Post your achivements or any events announcements here
+            Post your achivements or any life updates here
             <div className="textforpost">
                 <textarea className="captionforcreatepost" rows="3" placeholder="Enter Caption" value={caption} onChange={(e) => { setCaption(e.target.value) }}></textarea>
                 <div className="postimagepreview">

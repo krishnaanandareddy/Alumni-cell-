@@ -3,7 +3,7 @@ import UserAuth from "./auth/UserAuth";
 import NavBar from "./navbar/Navbar";
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import SignupPage from './auth/SignupPage'
-import Postspage from './events/Postspage';
+import Postspage from './posts/Postspage';
 import Home from './home/Home'
 import { AuthProvider } from "./contexts/AuthContext";
 import Profile from "./profile/Profile";
@@ -14,6 +14,8 @@ import Chat from "./chat/Chat";
 import Profiledata from "./profile/Profiledata";
 import Addprofiledata from "./profile/Addprofiledata";
 import Editprofiledata from "./profile/Editprofiledata";
+import Users from "./users/Users";
+import Announcementspage from "./announcements/Announcementspage"
 
 
 function App() {
@@ -22,6 +24,7 @@ function App() {
       <AuthProvider>
         <Switch>
           <Route path="/Posts" exact component={Postspage} />
+          <Route path="/Announcements" exact component={Announcementspage} />
           <Route path="/UserAuth" exact component={UserAuth} />
           <Route path="/SignupPage" exact component={SignupPage} />
           <Route path="/forgotPassword" exact component={forgotPassword} />
@@ -30,7 +33,8 @@ function App() {
           <PrivateRoute path="/Editprofiledata" exact component={Editprofiledata} />
           <Route path="/Addprofiledata" exact component={Addprofiledata} />
           <Route path="/UpdateProfile" exact component={UpdateProfile} />
-          <Route path="/Chat" exact component={Chat} />
+          <Route path="/Users" exact component={Users} />
+
         </Switch>
       </AuthProvider>
     </BrowserRouter>

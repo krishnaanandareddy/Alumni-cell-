@@ -18,11 +18,6 @@ export default function Profiledata() {
 
     return (
         <div>
-
-
-
-
-
             {userdata.map(({ id, email, data }) => (
                 <div>
                     {currentUser.email === data.username ? (<>

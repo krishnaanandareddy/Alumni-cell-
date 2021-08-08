@@ -26,7 +26,7 @@ export default function Addprofiledata() {
 
     const handleupload = () => {
 
-        db.collection("userinfo").add({
+        db.collection("userinfo").doc(currentUser.email).set({
             timestamp: firebase.firestore.FieldValue.serverTimestamp(),
             Adress: adress1,
             Course: course1,

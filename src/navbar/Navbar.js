@@ -7,6 +7,7 @@ import { NavDropdown } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import "./navbar.css"
 import Avatar from "@material-ui/core/Avatar";
+import { Button } from '@material-ui/core'
 
 
 const NavBar = () => {
@@ -62,7 +63,7 @@ const NavBar = () => {
                                     {
                                         !!currentUser.photoURL ? (
                                             <>
-                                            <img src={currentUser.photoURL} className="navbar_img" />
+                                                <img src={currentUser.photoURL} className="navbar_img" />
                                             </>
                                         ) : (
                                             <>
@@ -80,14 +81,14 @@ const NavBar = () => {
                             ) : (
                                 <>
                                     <Nav.Link eventKey={2}><Link to="/UserAuth" style={{ textDecoration: 'none' }}>
-                                        <a className="link" >Login/signup</a></Link>
-                                    </Nav.Link>
+                                        <a className="link" ><Button variant="contained" color="primary">Login/signup</Button></a></Link>
+                                </Nav.Link>
                                 </>
                             )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+        </Navbar>
         </>
     )
 }

@@ -11,6 +11,10 @@ import UpdateProfile from "./profile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import forgotPassword from "./auth/forgotPassword";
 import Chat from "./chat/Chat";
+import Profiledata from "./profile/Profiledata";
+import Addprofiledata from "./profile/Addprofiledata";
+import Editprofiledata from "./profile/Editprofiledata";
+
 
 function App() {
   return (
@@ -22,7 +26,9 @@ function App() {
           <Route path="/SignupPage" exact component={SignupPage} />
           <Route path="/forgotPassword" exact component={forgotPassword} />
           <Route path="/" exact component={Home} />
-          <PrivateRoute path="/Profile" exact component={Profile} />
+          <PrivateRoute path="/Profile" exact component={Profiledata} />
+          <PrivateRoute path="/Editprofiledata" exact component={Editprofiledata} />
+          <Route path="/Addprofiledata" exact component={Addprofiledata} />
           <Route path="/UpdateProfile" exact component={UpdateProfile} />
           <Route path="/Chat" exact component={Chat} />
         </Switch>

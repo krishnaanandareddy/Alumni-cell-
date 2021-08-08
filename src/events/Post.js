@@ -31,6 +31,7 @@ export default function Post({ id, username, profileUrl, photoUrl, caption, comm
                 </button> */}
                 {user ? (
                     user.email.toLowerCase() === username.toLowerCase() ? (
+                        
                         <button
                         className="postdeletebtn"
                             // aria-controls="simple-menu"

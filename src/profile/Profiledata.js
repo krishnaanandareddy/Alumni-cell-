@@ -22,8 +22,8 @@ export default function Profiledata() {
                 <div>
                     {currentUser.email === data.username ? (<>
                         <Profile
-                            key={id}
-                            id={id}
+                            // key={id}
+                            // id={id}
                             Name={data.Name}
                             Adress={data.Adress}
                             phonenumber={data.phonenumber}

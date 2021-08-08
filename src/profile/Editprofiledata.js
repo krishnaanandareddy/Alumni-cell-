@@ -1,5 +1,6 @@
 import React from 'react'
 import Addprofiledata from './Addprofiledata'
+import Editprofile from './Editprofile'
 import { useAuth } from '../contexts/AuthContext'
 import { useState, useEffect } from 'react'
 import db from '../firebase'
@@ -21,9 +22,7 @@ export default function Profiledata() {
             {userdata.map(({ id, email, data }) => (
                 <div>
                     {currentUser.email === data.username ? (<>
-                        <Addprofiledata
-                            key={id}
-                            id={id}
+                        <Editprofile
                             Name={data.Name}
                             Adress={data.Adress}
                             phonenumber={data.phonenumber}

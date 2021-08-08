@@ -28,6 +28,7 @@ const Home = (User) => {
                     </Col>
                 </Row>
             </div>
+             {/* <Carouselforhome />  */}
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} lg={4}>

@@ -25,7 +25,7 @@ const UserAuth = () => {
             setError("")
             setLoading(true)
             await login(emailRef.current.value, passwordRef.current.value)
-            history.push("/")
+            history.push("/Profile")
         } catch {
             setError("Failed to login")
         }
@@ -35,7 +35,7 @@ const UserAuth = () => {
     const googleProvider = new firebase.auth.GoogleAuthProvider()
     const signInWithGoogle = () => {
         auth.signInWithPopup(googleProvider).then((res) => {
-            history.push("/")
+            history.push("/Addprofiledata")
         }).catch((error) => {
             setError("Failed to login")
         })

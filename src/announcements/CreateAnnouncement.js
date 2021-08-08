@@ -8,7 +8,7 @@ import { storage } from '../firebase';
 import CircularProgress from "@material-ui/core/CircularProgress";
 
 
-export default function CreatePost() {
+export default function CreateAnnouncement() {
     const [caption, setCaption] = useState("")
     const [image, setImage] = useState(null)
     const { currentUser } = useAuth()
@@ -37,7 +37,7 @@ export default function CreatePost() {
             }, () => {
                 //get dowmload url and upload post info
                 storage.ref("images").child(`${imageName}.jpg`).getDownloadURL().then((imageUrl) => {
-                    db.collection("posts").add({
+                    db.collection("announcements").add({
                         timestamp: firebase.firestore.FieldValue.serverTimestamp(),
                         caption: caption,
                         photoUrl: imageUrl,
@@ -58,7 +58,7 @@ export default function CreatePost() {
 
     return (
         <div className="createpost">
-            Post your achivements or any events announcements here
+            Post events announcements here 
             <div className="textforpost">
                 <textarea className="captionforcreatepost" rows="3" placeholder="Enter Caption" value={caption} onChange={(e) => { setCaption(e.target.value) }}></textarea>
                 <div className="postimagepreview">

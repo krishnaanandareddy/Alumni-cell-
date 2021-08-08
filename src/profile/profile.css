@@ -1,0 +1,106 @@
+.profile-cover-image {
+    height: 257px;
+    width: 100%;
+    object-fit: cover;
+}
+.pagestrip {
+    display: block;
+    padding-top: 44px;
+    padding-bottom: 44px;
+    background-color: #EEEEEE;
+    justify-content: center;
+    display: block;
+}
+.propage{
+    margin-top: -111px;
+    max-width: 1186px;
+    margin: 0 auto 0 auto;
+    margin-top: -111px;
+}
+.userinfo{
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    margin: 8px;
+}
+.infobox{
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    margin: 8px;
+    margin-top: -8px;
+    padding:12px
+}
+.userinfonameandimage{
+    margin-bottom: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    margin: 8px;
+}
+.propicinprofilecontainer{    
+    margin:8px auto ;
+    border-radius: 100%;
+    min-width: 100px;
+    min-height: 100px;
+    max-width: 170px;
+    max-height: 170px;
+    width: 130px;
+    padding-top: 25px;
+}
+.propicinprofile {
+    height: 130px;
+    width: 130px;
+    object-fit: cover;
+    border-radius: 100%;
+}
+.usernameinpropage{
+    font-weight: 500;
+    font-size: 16px;
+}
+.studentdata{
+    padding-top: 5px;
+    padding-bottom: 25px;
+}
+.headingblockipropage{
+    box-sizing: border-box;
+    font-size: 16px;
+    padding:16px;
+}
+.infoline{
+    padding: 8px;
+}
+
+
+
+
+/* addprofile data css */
+.detailsboxcontainer{
+    background-color: #fff;
+    padding: 16px;
+    max-width: 900px;
+    margin: auto auto auto auto;
+    padding-top: 20px;
+    box-shadow: 0 2px 2px 0 rgb(0 0 0 / 14%), 0 3px 1px -2px rgb(0 0 0 / 20%), 0 1px 5px 0 rgb(0 0 0 / 12%);
+    margin-top: 20px;
+}
+.detailsbox{
+    background-color: #fff;
+    margin: 8px auto 8px auto;
+    padding-top: 20px;
+}
+.eachfield{
+    margin: 8px;
+}
+.adddetailsbody{
+    background-color: #EEEEEE;
+    height: 100vh;
+}
+.add-prodata-submitbtn-container{
+    max-width: 250px;
+    margin: auto;
+    margin-top: 8px;
+}
+.add-prodata-submitbtn{
+    width: 250px;
+}

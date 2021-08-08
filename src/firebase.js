@@ -11,6 +11,7 @@ var firebaseConfig = {
 
   //chatbax code below
 
+<<<<<<< HEAD
   //apiKey: "AIzaSyA00DgmFifkpb5_B8jJmBpD5jVrx8OAIas",
   //authDomain: "chatbox-b292e.firebaseapp.com",
   //projectId: "chatbox-b292e",
@@ -18,6 +19,15 @@ var firebaseConfig = {
   //messagingSenderId: "817073046135",
   //appId: "1:817073046135:web:113f7c3fca2f110c2cfc72",
   //measurementId: "G-D565NLSL77"
+=======
+  // apiKey: "AIzaSyA00DgmFifkpb5_B8jJmBpD5jVrx8OAIas",
+  // authDomain: "chatbox-b292e.firebaseapp.com",
+  // projectId: "chatbox-b292e",
+  // storageBucket: "chatbox-b292e.appspot.com",
+  // messagingSenderId: "817073046135",
+  // appId: "1:817073046135:web:113f7c3fca2f110c2cfc72",
+  // measurementId: "G-D565NLSL77"
+>>>>>>> b02ea2ef8736d601d603053058dff2498ea6c772
 
   // apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   // authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
@@ -33,7 +43,7 @@ const auth = firebase.auth();
 // const history = useHistory()
 const storage = firebase.storage();
 
-export default {db};
+export default db;
 export { auth,storage };
 
 

@@ -7,6 +7,7 @@ import { NavDropdown } from 'react-bootstrap'
 import { useAuth } from '../contexts/AuthContext'
 import "./navbar.css"
 import Avatar from "@material-ui/core/Avatar";
+import { Button } from '@material-ui/core'
 
 
 const NavBar = () => {
@@ -25,7 +26,7 @@ const NavBar = () => {
     }
     return (
         <>
-            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark">
+            <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className="header">
                 <Container>
                     <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Alumni Cell</a></Link></Navbar.Brand>
                     {/* <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand> */}
@@ -34,7 +35,7 @@ const NavBar = () => {
                         <Nav className="me-auto">
                             <Nav.Link className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Nav.Link>
                             <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }}><a className="link">Posts</a></Link></Nav.Link>
-                            <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }} ><a className="link">Initiatives</a></Link></Nav.Link>
+                            <Nav.Link className="navbar-brand"><Link to="/Announcements" style={{ textDecoration: 'none' }} ><a className="link">Announcements</a></Link></Nav.Link>
                             {/* <Nav.Link className= "navbar-brand link">Initiatives</Nav.Link> */}
                             {/* <NavDropdown className="link" title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
@@ -48,13 +49,14 @@ const NavBar = () => {
 
                             {!!currentUser ? (
                                 <>
-                                    {/* <p>{`Welcome, ${currentUser.displayName}`}</p> */}
+                                    
+                                    <Nav.Link eventKey={2}><Link to="/Users" style={{ textDecoration: 'none' }}>
+                                        <a className="link">Users</a></Link>
+                                    </Nav.Link>
                                     <Nav.Link eventKey={2}><Link to="/Profile" style={{ textDecoration: 'none' }}>
                                         <a className="link">Profile</a></Link>
                                     </Nav.Link>
-                                    <Nav.Link eventKey={2}><Link to="/Chat" style={{ textDecoration: 'none' }}>
-                                        <a className="link">Chat</a></Link>
-                                    </Nav.Link>
+                                    
                                     <Nav.Link eventKey={2}>
                                         <a style={{ textDecoration: 'none' }} className="link" onClick={handleLogout}>logout</a>
                                     </Nav.Link>
@@ -62,7 +64,7 @@ const NavBar = () => {
                                     {
                                         !!currentUser.photoURL ? (
                                             <>
-                                            <img src={currentUser.photoURL} className="navbar_img" />
+                                                <img src={currentUser.photoURL} className="navbar_img" />
                                             </>
                                         ) : (
                                             <>
@@ -80,14 +82,14 @@ const NavBar = () => {
                             ) : (
                                 <>
                                     <Nav.Link eventKey={2}><Link to="/UserAuth" style={{ textDecoration: 'none' }}>
-                                        <a className="link" >Login/signup</a></Link>
-                                    </Nav.Link>
+                                        <a className="link" ><Button variant="contained" color="primary">Login/signup</Button></a></Link>
+                                </Nav.Link>
                                 </>
                             )}
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
-            </Navbar>
+        </Navbar>
         </>
     )
 }

@@ -16,7 +16,7 @@ import db from '../firebase'
 import { useEffect } from 'react'
 import { Button } from '@material-ui/core'
 
-export default function Profile({ Name, Adress, phonenumber, State, Course, pincode, Department, country, joiningyear, endingyear, username, boola, boolb, user, id }) {
+export default function Profile({ Name, Adress, phonenumber, State, Course, pincode, Department, country, joiningyear, endingyear, username,  user, id }) {
     console.log(username)
     const [error, setError] = useState("")
     const [email, setEmail] = useState("")
@@ -61,7 +61,7 @@ export default function Profile({ Name, Adress, phonenumber, State, Course, pinc
                                     </div>
                                     <div className="userinfo">
                                         <div className="headingblockipropage">
-                                            <Link to="./Editprofiledata"><Button variant="contained" color="primary" className="add-prodata-open-btn">Edit user information here</Button></Link>
+                                            <Link to="./Editprofiledata"><Button variant="contained" color="primary" className="add-prodata-open-btn">Edit or Add user information here</Button></Link>
                                         </div>
                                     </div>
                                     <div className="userinfo">

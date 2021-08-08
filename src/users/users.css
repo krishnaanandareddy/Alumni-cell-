@@ -8,9 +8,10 @@
 }
 .userstextheading{
     padding: 10px;
-    background-color: rgb(144, 144, 236);
-    width:100%
+    background-color: #39A2DB;
+    width:100%;
 }
+
 .cardscontainer{
     padding: 20px;
     margin: auto;

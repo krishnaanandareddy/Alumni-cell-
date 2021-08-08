@@ -26,6 +26,7 @@ export default function Profile() {
             {error && <Alert variant="danger">{error}</Alert>}
             <h5>
                 Email:{currentUser.email}
+                uid: {currentUser.uid}
             </h5>
             <img src={currentUser.photoURL} />
             {

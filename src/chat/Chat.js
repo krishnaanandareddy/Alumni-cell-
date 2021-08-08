@@ -3,17 +3,21 @@ import NavBar from '../navbar/Navbar'
 import db from '../firebase'
 import { auth } from '../firebase'
 import SendMessage from './SendMessage'
-import  '.Chat.css'
+import { useAuth } from '../contexts/AuthContext'
+
+
 
 
 
 
 export default function Chat() {
+    const {currentUser}=useAuth()
     const scroll=useRef()
     const [messages,setMessages]=useState([]);
+
     useEffect(()=>{
         db.collection('messages').orderBy('createdAt').onSnapshot=(snapshot=>{
-            setMessages=snapshot.doc.map(doc=>doc.data()
+            setMessages=snapshot.doc.map((doc)=>{data: doc.data()}
             )})
     },[])
     return (
@@ -23,13 +27,18 @@ export default function Chat() {
             Chat goes her
             {messages.map((id,text,photoURL)=>{
                 <div>
-                   <div key={id} className={`msg ${uid === auth.currentUser.uid ? 'sent' : 'received'}`}>
-                        <img src={photoURL} alt=""></img>
-                        <p>{text}</p> 
-                   </div> 
-                   <SendMessage scroll={scroll}/>
-                   <div ref={scroll}></div>
-                </div>
+                {!!currentUser?(
+                    <div>
+                    <div key={id} className={`msg $ uid === auth.currentUser.uid ? 'sent' : 'received'`}>
+                            <img src={photoURL} alt="" />
+                            <p>{text}</p>
+                        </div>
+                    <SendMessage scroll={scroll} />
+                   <div ref={scroll}></div>   
+                    </div>
+                ):(<div></div>)}
+            </div>
+                   
             })}
             </div>
         </div>  

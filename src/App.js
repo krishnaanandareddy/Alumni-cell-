@@ -11,6 +11,8 @@ import UpdateProfile from "./profile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import forgotPassword from "./auth/forgotPassword";
 import Chat from "./chat/Chat";
+import UpcomingEvents from "./upcoming events/EventsAhead";
+
 
 function App() {
   return (
@@ -25,6 +27,7 @@ function App() {
           <PrivateRoute path="/Profile" exact component={Profile} />
           <Route path="/UpdateProfile" exact component={UpdateProfile} />
           <Route path="/Chat" exact component={Chat} />
+          <Route path="/UpcomingEvents" exact component={UpcomingEvents}/>
         </Switch>
       </AuthProvider>
     </BrowserRouter>

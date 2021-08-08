@@ -7,13 +7,27 @@ import director from "../Icons/director.jpg";
 import iiti from "../Icons/iiti.jpg";
 import './home.css'
 import Carouselforhome from '../Carousel/Carouselforhome';
+import Alumnipics from '../Alumnipics/alumnipics';
 
 
 const Home = (User) => {
     return (
         <div className="home">
             <NavBar />
-             <Carouselforhome /> 
+            <div className="container">
+                <Row>
+                    <Col sm={12} lg={8}>
+                        <div>
+                            <Alumnipics/>
+                        </div>
+                    </Col>
+                    <Col sm={12} lg={4}>
+                        <div>
+                           create profile page
+                        </div>
+                    </Col>
+                </Row>
+            </div>
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} lg={4}>
@@ -44,7 +58,7 @@ const Home = (User) => {
                 </Row>
             </div>
 
-
+            <Carouselforhome /> 
 
             <div className="margin-container-home">
                 <Row>
@@ -79,6 +93,25 @@ const Home = (User) => {
                     </Col>
                 </Row>
             </div>
+            <div className="margin-container-home">
+                <Row>
+                    <Col sm={12} lg={6}>
+                        <div>
+                            <div className="Alumni-stories text-center">
+                                hello
+                            </div>
+                        </div>
+                    </Col>
+                    <Col sm={12} lg={6}>
+                        <div>
+                            <div className="stories-message text-center">
+                                world
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
+
             <Footer />
         </div>
     )

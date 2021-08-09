@@ -4,6 +4,12 @@
   border-radius: 50%;
   /* margin-left: 20px; */
 }
+.navbar_logoimg {
+  height: 45px;
+  width: 45px;
+  border-radius: 10%;
+  /* margin-left: 20px; */
+}
 .header {
   /* background-color: black; */
   padding: 8px 20px;

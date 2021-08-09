@@ -25,6 +25,8 @@
     "react-responsive-carousel": "^3.2.20",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
+    "raf-manager": "0.3.0",
+    "proton-engine": "4.2.1",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

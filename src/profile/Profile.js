@@ -16,7 +16,7 @@ import db from '../firebase'
 import { useEffect } from 'react'
 import { Button } from '@material-ui/core'
 
-export default function Profile({ Name, Adress, phonenumber, State, Course, pincode, Department, country, joiningyear, endingyear, username,  user, id }) {
+export default function Profile({ Name, Adress, phonenumber, State, Course, pincode, Department, country, joiningyear, endingyear, username, user, id }) {
     console.log(username)
     const [error, setError] = useState("")
     const [email, setEmail] = useState("")
@@ -36,6 +36,7 @@ export default function Profile({ Name, Adress, phonenumber, State, Course, pinc
     return (
         <>
             <NavBar />
+
             {currentUser ? (
                 currentUser.email === username ? (
                     <div>
@@ -130,14 +131,14 @@ export default function Profile({ Name, Adress, phonenumber, State, Course, pinc
                             </Row>
                         </div>
                     </div>
-                    
+
 
                 ) : (
                     <>
                         <div>
-                            
+
                         </div>
-                        
+
                     </>
                 )
             ) : (

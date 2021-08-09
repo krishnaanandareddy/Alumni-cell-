@@ -1,10 +1,9 @@
 import { Button } from 'bootstrap'
 import React from 'react'
-import Comment from './Comment'
-import { storage } from '../firebase';
-import db from '../firebase';
+import db from '../../firebase';
+import { storage } from '../../firebase';
 
-export default function Post({ id, username, profileUrl, photoUrl, caption, comments, user }) {
+export default function Announcementsforhome({ id, username, profileUrl, photoUrl, caption, comments, user }) {
 
     const deletePost = () => {
         //delete post
@@ -17,7 +16,7 @@ export default function Post({ id, username, profileUrl, photoUrl, caption, comm
             .catch(function (error) {
                 console.error("Error removing document: ", error);
             });
-        };
+    };
 
     return (
         <div className="post">
@@ -52,9 +51,9 @@ export default function Post({ id, username, profileUrl, photoUrl, caption, comm
             </div>
             <div className="postbottom" >
                 <p><strong style={{ marginRight: "5px" }}>{username}</strong>{caption}</p>
+                
             </div>
-            {comments ? comments.map((comment) =>
-                <Comment username={comment.username} caption={comment.comment} />) : <> </>}
+            
         </div>
     )
 }

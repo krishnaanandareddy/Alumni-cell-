@@ -1,21 +1,18 @@
 import React from 'react'
-import NavBar from '../navbar/Navbar'
-import CreatePost from './CreatePost'
-import { useAuth } from '../contexts/AuthContext'
-import "./Posts.css"
-import Post from './Post'
 import { useState, useEffect } from 'react'
-import db from '../firebase'
-import Footer from '../footer/Footer'
+import { useAuth } from '../../contexts/AuthContext'
+import Announcementsforhome from './Announcementsforhome'
+import db from '../../firebase'
 
 
-const Postspage = () => {
+
+const Announcementsforhomedb = () => {
     const { currentUser } = useAuth()
     const [posts, setPosts] = useState([])
 
     useEffect(() => {
         // this is where the code runs
-        db.collection("posts").orderBy("timestamp", "desc")
+        db.collection("announcements").orderBy("timestamp", "desc")
             .onSnapshot((snapshot) => {
                 setPosts(snapshot.docs.map((doc) => ({ id: doc.id, post: doc.data() })));
             });
@@ -23,24 +20,12 @@ const Postspage = () => {
 
     return (
         <>
-            <NavBar />
             <div className="posts">
                 <div>
-                    {!!currentUser ? (
-                        <>
-                            <div className="createpostinpostspage">
-                                <CreatePost />
-                            </div>
-                        </>
-                    ) : (
-                        <>
-                            <p>signin to create posts or any announcements</p>
-                        </>
-                    )}
                     <div className="postsbox">
                         <div className="postinposts ">
                             {posts.map(({ id, post }) => (
-                                <Post
+                                <Announcementsforhome
                                     key={id}
                                     id={id}
                                     profileUrl={post.profileUrl}
@@ -51,7 +36,6 @@ const Postspage = () => {
                                     user={currentUser}
                                 />
                             ))}
-                            <Footer />
                         </div>
                     </div>
                 </div>
@@ -60,4 +44,4 @@ const Postspage = () => {
     )
 }
 
-export default Postspage
+export default Announcementsforhomedb

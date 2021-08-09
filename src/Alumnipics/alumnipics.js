@@ -3,7 +3,7 @@ import './alumnipics.css';
 
 export default function Alumnipics (){
     return(
-        <div>
+        <div className="picscontainer">
             <div id="cf" className="cfFadeInOut">
                <img className="top" src="https://images.shiksha.com/mediadata/images/1488192881phpR8rY1q.jpeg" />
                <img className="pic2" src="https://media.istockphoto.com/photos/graduation-day-picture-id1066324992?k=6&m=1066324992&s=612x612&w=0&h=PUdDocvWkqMoIonaWHahqNP6wL0or9IjAZuZimthJTA="/>

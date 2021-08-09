@@ -6,8 +6,13 @@
     margin: 20px;
 }
 .director-image{
+    font-family: 'Georama' ,sans-serif;
     margin: 20px;
     
+}
+.p{
+    font-family: 'Georama', sans-serif;
+    font-family: 'Roboto', sans-serif;
 }
 .director-message{
     margin: 20px;
@@ -23,3 +28,7 @@
     background-color: #EEEEEE;
 }
 
+.stories-message .Alumni-stories{
+    width: 500px;
+    height: 500px;
+}

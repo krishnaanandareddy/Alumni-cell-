@@ -11,6 +11,7 @@ import UpdateProfile from "./profile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import forgotPassword from "./auth/forgotPassword";
 import Chat from "./chat/Chat";
+import UpcomingEvents from "./upcoming events/EventsAhead";
 import Profiledata from "./profile/Profiledata";
 import Addprofiledata from "./profile/Addprofiledata";
 import Editprofiledata from "./profile/Editprofiledata";
@@ -34,6 +35,8 @@ function App() {
           <PrivateRoute path="/Editprofiledata" exact component={Editprofiledata} />
           <Route path="/Addprofiledata" exact component={Addprofiledata} />
           <Route path="/UpdateProfile" exact component={UpdateProfile} />
+          <Route path="/Chat" exact component={Chat} />
+          <Route path="/UpcomingEvents" exact component={UpcomingEvents}/>
           <Route path="/Users" exact component={Users} />
           <Route path="/CreateAnnouncement" exact component={CreateAnnouncement} />
 

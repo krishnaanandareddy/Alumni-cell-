@@ -11,6 +11,14 @@ var firebaseConfig = {
 
   //chatbax code below
 
+  //apiKey: "AIzaSyA00DgmFifkpb5_B8jJmBpD5jVrx8OAIas",
+  //authDomain: "chatbox-b292e.firebaseapp.com",
+  //projectId: "chatbox-b292e",
+  //storageBucket: "chatbox-b292e.appspot.com",
+  //messagingSenderId: "817073046135",
+  //appId: "1:817073046135:web:113f7c3fca2f110c2cfc72",
+  //measurementId: "G-D565NLSL77"
+  
   // apiKey: "AIzaSyA00DgmFifkpb5_B8jJmBpD5jVrx8OAIas",
   // authDomain: "chatbox-b292e.firebaseapp.com",
   // projectId: "chatbox-b292e",

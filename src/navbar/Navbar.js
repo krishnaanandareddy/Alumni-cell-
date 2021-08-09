@@ -8,6 +8,7 @@ import { useAuth } from '../contexts/AuthContext'
 import "./navbar.css"
 import Avatar from "@material-ui/core/Avatar";
 import { Button } from '@material-ui/core'
+import websitelogo from "../images/websitelogo.jpeg"
 
 
 const NavBar = () => {
@@ -28,14 +29,15 @@ const NavBar = () => {
         <>
             <Navbar collapseOnSelect expand="md" bg="dark" variant="dark" className="header">
                 <Container>
-                    <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Alumni Cell</a></Link></Navbar.Brand>
+                    <Navbar.Brand className="navbar-brand"><Link to="/"><a className="link"><img  className="navbar_logoimg" src={websitelogo} /></a></Link></Navbar.Brand>
+                    {/* <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Alumni Cell</a></Link></Navbar.Brand> */}
                     {/* <Navbar.Brand className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Navbar.Brand> */}
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="me-auto">
                             <Nav.Link className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }}><a className="link">Home</a></Link></Nav.Link>
                             <Nav.Link className="navbar-brand"><Link to="/Posts" style={{ textDecoration: 'none' }}><a className="link">Posts</a></Link></Nav.Link>
-                            <Nav.Link className="navbar-brand"><Link to="/Announcements" style={{ textDecoration: 'none' }} ><a className="link">Announcements</a></Link></Nav.Link>
+                            <Nav.Link className="navbar-brand"><Link to="/" style={{ textDecoration: 'none' }} ><a className="link">Announcements</a></Link></Nav.Link>
                             {/* <Nav.Link className= "navbar-brand link">Initiatives</Nav.Link> */}
                             {/* <NavDropdown className="link" title="Dropdown" id="collasible-nav-dropdown">
                                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>

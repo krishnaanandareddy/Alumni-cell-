@@ -1,8 +1,7 @@
 import { Button } from 'bootstrap'
 import React from 'react'
-import Comment from './Comment'
-import { storage } from '../firebase';
-import db from '../firebase';
+import { storage } from '../../firebase';
+import db from '../../firebase';
 
 export default function Post({ id, username, profileUrl, photoUrl, caption, comments, user }) {
 
@@ -53,8 +52,8 @@ export default function Post({ id, username, profileUrl, photoUrl, caption, comm
             <div className="postbottom" >
                 <p><strong style={{ marginRight: "5px" }}>{username}</strong>{caption}</p>
             </div>
-            {comments ? comments.map((comment) =>
-                <Comment username={comment.username} caption={comment.comment} />) : <> </>}
+            {/* {comments ? comments.map((comment) =>
+                <Comment username={comment.username} caption={comment.comment} />) : <> </>} */}
         </div>
     )
 }

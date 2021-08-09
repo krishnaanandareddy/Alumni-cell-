@@ -6,8 +6,8 @@ import { Row, Col } from 'react-bootstrap';
 import director from "../Icons/director.jpg";
 import iiti from "../Icons/iiti.jpg";
 import './home.css'
-import Carouselforhome from '../Carousel/Carouselforhome';
-
+import Carouselforhome from '../Carousel/Carouselforhome'
+import Postsforhomedb from './postsforhome/Postsforhomedb';
 
 const Home = (User) => {
     return (
@@ -42,6 +42,7 @@ const Home = (User) => {
                         </div>
                     </Col>
                 </Row>
+                
             </div>
 
 
@@ -77,6 +78,16 @@ const Home = (User) => {
                             </div>
                         </div>
                     </Col>
+                </Row>
+            </div>
+            <div className="margin-container-home">
+                <Row>
+                    <col md={6}>
+                        {/* <Postsforhomedb /> */}
+                    </col>
+                    <col md={6}>
+
+                    </col>
                 </Row>
             </div>
             <Footer />

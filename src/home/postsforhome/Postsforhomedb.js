@@ -1,15 +1,11 @@
 import React from 'react'
-import NavBar from '../navbar/Navbar'
-import CreatePost from './CreatePost'
-import { useAuth } from '../contexts/AuthContext'
-import "./Posts.css"
-import Post from './Post'
+import { useAuth } from '../../contexts/AuthContext'
+import Postsforhome from './Postsforhome'
 import { useState, useEffect } from 'react'
-import db from '../firebase'
-import Footer from '../footer/Footer'
+import db from '../../firebase'
 
 
-const Postspage = () => {
+const Postsforhomedb = () => {
     const { currentUser } = useAuth()
     const [posts, setPosts] = useState([])
 
@@ -23,10 +19,9 @@ const Postspage = () => {
 
     return (
         <>
-            <NavBar />
             <div className="posts">
                 <div>
-                    {!!currentUser ? (
+                    {/* {!!currentUser ? (
                         <>
                             <div className="createpostinpostspage">
                                 <CreatePost />
@@ -36,11 +31,11 @@ const Postspage = () => {
                         <>
                             <p>signin to create posts or any announcements</p>
                         </>
-                    )}
+                    )} */}
                     <div className="postsbox">
                         <div className="postinposts ">
                             {posts.map(({ id, post }) => (
-                                <Post
+                                <Postsforhome
                                     key={id}
                                     id={id}
                                     profileUrl={post.profileUrl}
@@ -51,7 +46,6 @@ const Postspage = () => {
                                     user={currentUser}
                                 />
                             ))}
-                            <Footer />
                         </div>
                     </div>
                 </div>
@@ -60,4 +54,4 @@ const Postspage = () => {
     )
 }
 
-export default Postspage
+export default Postsforhomedb

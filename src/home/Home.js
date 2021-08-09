@@ -6,8 +6,15 @@ import { Row, Col } from 'react-bootstrap';
 import director from "../Icons/director.jpg";
 import iiti from "../Icons/iiti.jpg";
 import './home.css'
+<<<<<<< HEAD
 import Carouselforhome from '../Carousel/Carouselforhome';
 import Alumnipics from '../Alumnipics/alumnipics';
+=======
+import Alumnipics from '../Alumnipics/alumnipics';
+import Gallery from '../Carousel/carousel';
+
+
+>>>>>>> 0496fc9aa07e910ee0d17f1ea406000011f1575e
 
 
 const Home = (User) => {
@@ -17,6 +24,7 @@ const Home = (User) => {
             <div className="container">
                 <Row>
                     <Col sm={12} lg={8}>
+<<<<<<< HEAD
                         <div>
                             <Alumnipics/>
                         </div>
@@ -24,17 +32,29 @@ const Home = (User) => {
                     <Col sm={12} lg={4}>
                         <div>
                            create profile page
+=======
+                       <Alumnipics/> 
+                    </Col>
+                    <Col sm={12} lg={4}>
+                        <div>
+                            <div className="createprofile">
+                                <img src="https://media.istockphoto.com/photos/graduation-cap-picture-id951149042?k=6&m=951149042&s=612x612&w=0&h=nNqzHSmW4QkkJmG8h3vi8yA0z69VTEiZE1cEC2cZkQ8="/>
+                            </div>
+>>>>>>> 0496fc9aa07e910ee0d17f1ea406000011f1575e
                         </div>
                     </Col>
                 </Row>
             </div>
+<<<<<<< HEAD
              {/* <Carouselforhome />  */}
+=======
+>>>>>>> 0496fc9aa07e910ee0d17f1ea406000011f1575e
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} lg={4}>
                         <div>
                             <div className="iiti-image text-center">
-                                <img src={iiti} />
+                                <img src={iiti}/>
                             </div>
                         </div>
                     </Col>
@@ -59,7 +79,14 @@ const Home = (User) => {
                 </Row>
             </div>
 
+<<<<<<< HEAD
             <Carouselforhome /> 
+=======
+            <div className="container">
+                <h3>Alumni Gallery</h3>
+                <Gallery/>
+            </div>
+>>>>>>> 0496fc9aa07e910ee0d17f1ea406000011f1575e
 
             <div className="margin-container-home">
                 <Row>

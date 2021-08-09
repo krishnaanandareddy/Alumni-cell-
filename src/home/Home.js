@@ -6,14 +6,41 @@ import { Row, Col } from 'react-bootstrap';
 import director from "../Icons/director.jpg";
 import iiti from "../Icons/iiti.jpg";
 import './home.css'
-import Carouselforhome from '../Carousel/Carouselforhome'
+import Carouselforhome from '../Carousel/Carouselforhome';
+import Alumnipics from '../Alumnipics/alumnipics';
+import Gallery from '../Carousel/carousel';
 import Postsforhomedb from './postsforhome/Postsforhomedb';
+import { Link } from 'react-router-dom';
+import Announcementsforhomedb from './announcementsforhome/Announcementsforhomedb';
+
+
 
 const Home = (User) => {
     return (
         <div className="home">
             <NavBar />
-             {/* <Carouselforhome />  */}
+            <div className="container">
+                <Row>
+                    <Col sm={12} lg={8}>
+                        <div>
+                            <Alumnipics />
+                        </div>
+                    </Col>
+                    <Col sm={12} lg={4}>
+                        <div>
+                            create profile page
+                            <Alumnipics />
+                        </div>
+                    </Col>
+                    <Col sm={12} lg={4}>
+                        <div>
+                            <div className="createprofile">
+                                <img src="https://media.istockphoto.com/photos/graduation-cap-picture-id951149042?k=6&m=951149042&s=612x612&w=0&h=nNqzHSmW4QkkJmG8h3vi8yA0z69VTEiZE1cEC2cZkQ8=" />
+                            </div>
+                        </div>
+                    </Col>
+                </Row>
+            </div>
             <div className="margin-container-home">
                 <Row>
                     <Col sm={12} lg={4}>
@@ -42,10 +69,12 @@ const Home = (User) => {
                         </div>
                     </Col>
                 </Row>
-                
             </div>
 
-
+            <div className="container">
+                <h3>Alumni Gallery</h3>
+                <Gallery />
+            </div>
 
             <div className="margin-container-home">
                 <Row>
@@ -82,14 +111,27 @@ const Home = (User) => {
             </div>
             <div className="margin-container-home">
                 <Row>
-                    <col md={6}>
-                        {/* <Postsforhomedb /> */}
-                    </col>
-                    <col md={6}>
-
-                    </col>
+                    <Col sm={12} lg={6}>
+                        <div>
+                            <div className="Alumni-stories text-center">
+                                Recent posts by community
+                                <Postsforhomedb />
+                                <Link to="./posts" style={{ textDecoration: "none" }}>click me to see more</Link>
+                            </div>
+                        </div>
+                    </Col>
+                    <Col sm={12} lg={6}>
+                        <div>
+                            <div className="stories-message text-center">
+                                Recent Announcements by community
+                                <Announcementsforhomedb />
+                                <Link to="./Announcements" style={{ textDecoration: "none" }}>click me to see more</Link>
+                            </div>
+                        </div>
+                    </Col>
                 </Row>
             </div>
+
             <Footer />
         </div>
     )

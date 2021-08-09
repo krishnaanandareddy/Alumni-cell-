@@ -57,7 +57,7 @@ export default function Addprofiledata() {
     return (
         <div className="adddetailsbody">
             <NavBar />
-            <div style={{ backgroundColor: "#EEEEEE" }}>
+            <div className="first">
                 <div>
                     <Form onSubmit={handleSubmit}>
                         <Row className="detailsboxcontainer">
@@ -95,7 +95,7 @@ export default function Addprofiledata() {
                             <Col sm={6}>
                                 <div className="detailsbox">
                                     <Form.Group >
-                                        <Form.Control type="text" placeholder="Adress" onChange={(e) => { setAdress1(e.target.value) }} required /><br />
+                                        <Form.Control type="text" placeholder="Address" onChange={(e) => { setAdress1(e.target.value) }} required /><br />
                                     </Form.Group>
                                 </div>
                                 <div className="detailsbox">
